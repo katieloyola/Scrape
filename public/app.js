@@ -1,5 +1,6 @@
 // Grab the articles as a json
-$.getJSON("/articles", function(data) {
+$.getJSON("/scrape", function(data) {
+console.log(data);
   // For each one
   for (var i = 0; i < data.length; i++) {
     // Display the appropriate information on the page
@@ -7,6 +8,10 @@ $.getJSON("/articles", function(data) {
   }
 });
 
+$(document).on("click", ".scrape-new",function () {
+  console.log("It's working!");
+  $("#articles")
+})
 
 // Whenever someone clicks a p tag
 $(document).on("click", "p", function() {
@@ -41,6 +46,7 @@ $(document).on("click", "p", function() {
       }
     });
 });
+
 
 // When you click the savenote button
 $(document).on("click", "#savenote", function() {
